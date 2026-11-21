@@ -1,26 +1,5 @@
 # 🎓 College Placement Management System
 
-```{=html}
-<p align="center">
-```
-`<strong>`{=html}A simple, database-driven portal to manage campus
-recruitment activities.`</strong>`{=html}
-```{=html}
-</p>
-```
-```{=html}
-<p align="center">
-```
-`<img src="https://img.shields.io/badge/Python-3.x-blue?logo=python" alt="Python">`{=html}
-`<img src="https://img.shields.io/badge/Flask-Web%20Framework-black?logo=flask" alt="Flask">`{=html}
-`<img src="https://img.shields.io/badge/MySQL-Database-4479A1?logo=mysql&logoColor=white" alt="MySQL">`{=html}
-`<img src="https://img.shields.io/badge/HTML%20%7C%20CSS-Frontend-orange" alt="HTML and CSS">`{=html}
-```{=html}
-</p>
-```
-
-------------------------------------------------------------------------
-
 ## 📌 About the Project
 
 The **College Placement Management System** is a web-based project
@@ -285,10 +264,8 @@ can present that data through a web interface.
 
 ------------------------------------------------------------------------
 
-```{=html}
-<p align="center">
-```
-Made with 🐍 Python, ⚡ Flask, and 🐬 MySQL
-```{=html}
-</p>
-```
+
+
+## Made with 🐍 Python, ⚡ Flask, and 🐬 MySQL
+
+
