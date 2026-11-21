@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Applications | Placement Portal{% endblock %}
+{% block content %}
+<section class="page-heading"><div><h1>Applications</h1><p>Record student applications for job drives.</p></div></section>
+<section class="panel"><h2>Submit Application</h2>
+{% if students and drives %}<form method="POST" class="form-grid">
+<select name="student_id">{% for s in students %}<option value="{{ s.student_id }}">{{ s.student_name }}</option>{% endfor %}</select>
+<select name="drive_id">{% for d in drives %}<option value="{{ d.drive_id }}">{{ d.label }}</option>{% endfor %}</select>
+<input type="date" name="application_date" required>
+<button type="submit">Submit Application</button>
+</form>{% else %}<p>Add students and job drives first.</p>{% endif %}
+</section>
+<section class="panel"><h2>Application Records</h2><div class="table-wrap"><table><thead><tr><th>ID</th><th>Student</th><th>Company</th><th>Role</th><th>Applied on</th></tr></thead><tbody>
+{% for r in rows %}<tr><td>{{ r.application_id }}</td><td>{{ r.student_name }}</td><td>{{ r.company_name }}</td><td>{{ r.job_role }}</td><td>{{ r.application_date }}</td></tr>{% endfor %}
+</tbody></table></div></section>
+{% endblock %}

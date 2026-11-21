@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Results | Placement Portal{% endblock %}
+{% block content %}
+<section class="page-heading"><div><h1>Placement Results</h1><p>Update and review selection outcomes.</p></div></section>
+<section class="panel"><h2>Record Result</h2>
+<form method="POST" class="form-grid">
+<select name="application_id">{% for a in applications %}<option value="{{ a.application_id }}">{{ a.label }}</option>{% endfor %}</select>
+<select name="result_status"><option>Selected</option><option>Rejected</option><option>Pending</option></select>
+<button type="submit">Save Result</button>
+</form></section>
+<section class="panel"><h2>Result Records</h2><div class="table-wrap"><table><thead><tr><th>ID</th><th>Student</th><th>Company</th><th>Role</th><th>Status</th><th>Package (LPA)</th></tr></thead><tbody>
+{% for r in rows %}<tr><td>{{ r.result_id }}</td><td>{{ r.student_name }}</td><td>{{ r.company_name }}</td><td>{{ r.job_role }}</td><td><span class="status">{{ r.result_status }}</span></td><td>{{ r.package_lpa }}</td></tr>{% endfor %}
+</tbody></table></div></section>
+{% endblock %}

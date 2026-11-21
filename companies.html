@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Companies | Placement Portal{% endblock %}
+{% block content %}
+<section class="page-heading"><div><h1>Companies</h1><p>Manage recruiting organizations.</p></div></section>
+<section class="panel"><h2>Add Company</h2><form method="POST" class="form-grid">
+<input name="company_name" placeholder="Company name" required>
+<input name="location" placeholder="Location">
+<input name="industry" placeholder="Industry">
+<button type="submit">Add Company</button>
+</form></section>
+<section class="panel"><h2>Company Records</h2><div class="table-wrap"><table><thead><tr><th>ID</th><th>Company</th><th>Location</th><th>Industry</th></tr></thead><tbody>
+{% for r in rows %}<tr><td>{{ r.company_id }}</td><td>{{ r.company_name }}</td><td>{{ r.location }}</td><td>{{ r.industry }}</td></tr>{% endfor %}
+</tbody></table></div></section>
+{% endblock %}

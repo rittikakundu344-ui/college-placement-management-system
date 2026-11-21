@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Placement Portal{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">🎓 Placement Portal</div>
+    <nav>
+      <a href="{{ url_for('dashboard') }}">Dashboard</a>
+      <a href="{{ url_for('students') }}">Students</a>
+      <a href="{{ url_for('companies') }}">Companies</a>
+      <a href="{{ url_for('drives') }}">Job Drives</a>
+      <a href="{{ url_for('applications') }}">Applications</a>
+      <a href="{{ url_for('results') }}">Results</a>
+    </nav>
+    <p class="side-note">College Placement Management System</p>
+  </aside>
+  <main class="main">
+    <header class="topbar"><span>Placement Management</span><span>Admin Panel</span></header>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}<div class="messages">{% for message in messages %}<p>{{ message }}</p>{% endfor %}</div>{% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>
